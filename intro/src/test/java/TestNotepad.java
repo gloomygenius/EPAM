@@ -9,7 +9,7 @@ public class TestNotepad {
         notepad.addNote("My fourth note");
         notepad.addNote("My fifth note");
         System.out.println("Removing second note... ");
-        notepad.removeNote(1);
+        notepad.removeNote(2);
         System.out.println("Show all notes:");
         notepad.showAllNotes();
     }
