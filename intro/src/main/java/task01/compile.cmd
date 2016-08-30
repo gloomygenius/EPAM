@@ -1,0 +1,1 @@
+javac -sourcepath . -d ..\..\..\..\bin javase01\t01\main\Main.java

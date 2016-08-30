@@ -1,5 +1,11 @@
 package task06;
 
+/** Блокнот для записей
+ *
+ *  Данный класс позволяет создовать объекты типа "блокнот" с желаемым количеством записей.
+ *  Записи в блокнот можно добавлять и удалять
+ *  @author Vasiliy Bobkov
+ */
 public class Notepad {
     private int notepadSize = 20;
     private Note[] notes;
