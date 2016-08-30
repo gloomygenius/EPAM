@@ -2,9 +2,10 @@ package task06;
 
 public class Notepad {
     private int notepadSize = 20;
-    private Note[] notes = new Note[notepadSize];
+    private Note[] notes;
+
     public Notepad(int notepadSize) {
-        this.notepadSize = notepadSize;
+        notes=new Note[notepadSize];
     }
     public void addNote(String newText) {
         for (int i = 0; i < notes.length; i++) {

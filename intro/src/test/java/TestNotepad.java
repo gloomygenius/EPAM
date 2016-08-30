@@ -2,7 +2,7 @@ import task06.Notepad;
 
 public class TestNotepad {
     public static void main(String[] args) {
-        Notepad notepad=new Notepad(20);
+        Notepad notepad=new Notepad(40);
         notepad.addNote("My first note");
         notepad.addNote("My second note");
         notepad.addNote("My third note");
