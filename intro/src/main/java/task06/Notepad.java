@@ -14,6 +14,7 @@ public class Notepad {
      *
      * Инициализируется массив записей с дефолтовым размером
      */
+    @SuppressWarnings("unused")
     public Notepad() {
         notes = new Note[notepadSize];
     }
@@ -43,7 +44,7 @@ public class Notepad {
             }
         }
         System.out.println("Нет места для новых записей");
-        return;
+
     }
 
     /** Удаляет запись по указанному индексу.
@@ -53,7 +54,7 @@ public class Notepad {
      */
     public void removeNote(int index) {
         notes[index] = null;
-        return;
+
     }
 
     /** Редактирует запись по указанному индексу.
@@ -64,6 +65,7 @@ public class Notepad {
      * @param newText
      * Новый текст записи
      */
+    @SuppressWarnings("unused")
     public void editNote(int index, String newText) {
         notes[index].setTextOfNote(newText);
     }
@@ -76,6 +78,5 @@ public class Notepad {
             if (notes[i] == null) continue;
             System.out.println(notes[i].getTextOfNote());
         }
-        return;
     }
 }

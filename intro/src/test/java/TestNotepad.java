@@ -1,3 +1,5 @@
+import task06.Notepad;
+
 public class TestNotepad {
     public static void main(String[] args) {
         Notepad notepad=new Notepad(40);
