@@ -10,14 +10,30 @@ public class Notepad {
     private int notepadSize = 20;
     private Note[] notes;
 
+    /** Создаёт ноый объект Notepad.
+     *
+     * Инициализируется массив записей с дефолтовым размером
+     */
     public Notepad() {
         notes = new Note[notepadSize];
     }
 
+    /** Создаёт новый объект Notepad с указанным размером.
+     *
+     * Инициализируется массив записей с указанным размером
+     * @param notepadSize
+     * Размер массива записей
+     */
     public Notepad(int notepadSize) {
         notes = new Note[notepadSize];
     }
 
+    /** Добавляет новую запись.
+     *
+     * Добавляет новую запись. Если нет места для свободных записей, то выводится соответствующее сообщение
+     * @param newText
+     * Текст новой записи.
+     */
     public void addNote(String newText) {
         for (int i = 0; i < notes.length; i++) {
             if (notes[i] == null) {
@@ -30,15 +46,31 @@ public class Notepad {
         return;
     }
 
+    /** Удаляет запись по указанному индексу.
+     *
+     * @param index
+     * индекс элемента массива удаляемой записи
+     */
     public void removeNote(int index) {
         notes[index] = null;
         return;
     }
 
+    /** Редактирует запись по указанному индексу.
+     *
+     * Перезаписывает запись по указанному индексу
+     * @param index
+     * Индекс записи
+     * @param newText
+     * Новый текст записи
+     */
     public void editNote(int index, String newText) {
         notes[index].setTextOfNote(newText);
     }
 
+    /** Выводит на экран все записи.
+     *
+     */
     public void showAllNotes() {
         for (int i = 0; i < notepadSize; i++) {
             if (notes[i] == null) continue;
