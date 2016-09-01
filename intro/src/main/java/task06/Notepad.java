@@ -53,6 +53,10 @@ public class Notepad {
      * индекс элемента массива удаляемой записи
      */
     public void removeNote(int index) {
+        if (!isCorrectIndex(index))  {
+            System.out.println("Некорректный индекс");
+            return;
+        }
         notes[index] = null;
 
     }
@@ -67,6 +71,10 @@ public class Notepad {
      */
     @SuppressWarnings("unused")
     public void editNote(int index, String newText) {
+        if (!isCorrectIndex(index))  {
+            System.out.println("Некорректный индекс");
+            return;
+        }
         notes[index].setTextOfNote(newText);
     }
 
@@ -78,5 +86,9 @@ public class Notepad {
             if (notes[i] == null) continue;
             System.out.println(notes[i].getTextOfNote());
         }
+    }
+    private boolean isCorrectIndex(int index){
+        if ((index<0)||(index >= notepadSize)) return false;
+        else return true;
     }
 }
