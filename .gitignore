@@ -19,3 +19,4 @@ gradlew*
 *.jar
 *.war
 *.ear
+/classWork/

@@ -12,5 +12,7 @@ public class TestNotepad {
         notepad.removeNote(2);
         System.out.println("Show all notes:");
         notepad.showAllNotes();
+        notepad.editNote(3,"modified note");
+        notepad.showAllNotes();
     }
 }
