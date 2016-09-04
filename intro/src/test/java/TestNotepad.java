@@ -14,5 +14,6 @@ public class TestNotepad {
         notepad.showAllNotes();
         notepad.editNote(3,"modified note");
         notepad.showAllNotes();
+        notepad.editNote(40,"modified note");
     }
 }
