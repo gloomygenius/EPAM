@@ -19,5 +19,4 @@ gradlew*
 *.jar
 *.war
 *.ear
-/classWork/
 /myExample/
