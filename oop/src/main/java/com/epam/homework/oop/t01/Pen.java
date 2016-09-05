@@ -22,6 +22,7 @@ public class Pen {
         if (null==trademark) return (null==pen.trademark);
         else if (!trademark.equals(pen.trademark)) return false;
         return true;
+
     }
 
     @Override
