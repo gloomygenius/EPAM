@@ -1,5 +1,11 @@
 package com.epam.homework.oop.t01;
 
+/**
+ * Класс "Ручка".
+ *
+ * @author Василий Бобков
+ * @version 1.0
+ */
 public class Pen {
 
     private double price;
@@ -12,6 +18,13 @@ public class Pen {
     public void setTrademark(String trademark) {
         this.trademark = trademark;
     }
+
+    /**
+     * Переопределённый метод equals().
+     *
+     * @param o Сравниваемый объект
+     * @return true если совпадает, иначе false
+     */
     @Override
     public boolean equals(Object o) {
         if (this==o) return true;
@@ -25,11 +38,21 @@ public class Pen {
 
     }
 
+    /**
+     * Переопределённый метод hashCode().
+     *
+     * @return возвращает хэш код
+     */
     @Override
     public int hashCode(){
         return ((int) price + trademark.length());
     }
 
+    /**
+     * Метод toString().
+     *
+     * @return возвращает марку ручки и цену в виде строки
+     */
     @Override
     public String toString() {
         return ("Price of "+trademark+" pen = "+price);

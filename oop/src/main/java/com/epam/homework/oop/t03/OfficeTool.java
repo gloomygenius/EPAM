@@ -5,6 +5,10 @@ public class OfficeTool {
 
     private typeOfOfficeToolEnum typeOfOfficeTool;
 
+    public OfficeTool(typeOfOfficeToolEnum a){
+        typeOfOfficeTool=a;
+    }
+
     public typeOfOfficeToolEnum getTypeOfOfficeTool() {
         return typeOfOfficeTool;
     }
