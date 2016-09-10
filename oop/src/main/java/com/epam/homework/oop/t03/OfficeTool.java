@@ -1,12 +1,12 @@
 package com.epam.homework.oop.t03;
 
-public class OfficeTool {
+public class OfficeTool extends Stationery {
     enum typeOfOfficeToolEnum {STAPLER, SCISSORS, CLIPS}
 
     private typeOfOfficeToolEnum typeOfOfficeTool;
 
-    public OfficeTool(typeOfOfficeToolEnum a){
-        typeOfOfficeTool=a;
+    public OfficeTool(String brand, double price) {
+        super(brand, price);
     }
 
     public typeOfOfficeToolEnum getTypeOfOfficeTool() {
@@ -16,6 +16,5 @@ public class OfficeTool {
     public void setTypeOfOfficeTool(typeOfOfficeToolEnum typeOfOfficeTool) {
         this.typeOfOfficeTool = typeOfOfficeTool;
     }
-
 
 }

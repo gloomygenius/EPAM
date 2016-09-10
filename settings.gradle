@@ -1,5 +1,5 @@
 rootProject.name = 'EPAM'
 
-include 'intro'
-include 'oop'
-
+include 'intro',
+        'oop',
+        'strings'
