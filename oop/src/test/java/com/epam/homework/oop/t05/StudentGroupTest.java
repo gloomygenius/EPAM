@@ -14,9 +14,5 @@ public class StudentGroupTest {
         group.add(new StudentGroup(EnumCourses.PHYLOSOPHY));
         group.add(new StudentGroup(EnumCourses.PHYSICS));
     }
-    @Test
-    public void addToGroupTest(){
-        group.add()
-    }
 
 }
