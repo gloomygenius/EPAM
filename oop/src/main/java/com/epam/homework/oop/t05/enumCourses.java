@@ -1,6 +1,6 @@
 package com.epam.homework.oop.t05;
 
-public enum enumCourses {
+public enum EnumCourses {
     PHYSICS("double"),
     BIOLOGY("int"),
     PHYLOSOPHY("double"),
@@ -8,7 +8,7 @@ public enum enumCourses {
 
     public String typeOfMark;
 
-    private enumCourses(String typeOfMark) {
+    private EnumCourses(String typeOfMark) {
         this.typeOfMark = typeOfMark;
     }
 

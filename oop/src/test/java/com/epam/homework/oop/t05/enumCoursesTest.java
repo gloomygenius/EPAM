@@ -5,9 +5,9 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-public class enumCoursesTest {
+public class EnumCoursesTest {
     @Test
     public void testOfConstructor() {
-        assertThat(enumCourses.BIOLOGY.typeOfMark,is("int"));
+        assertThat(EnumCourses.BIOLOGY.typeOfMark,is("int"));
     }
 }

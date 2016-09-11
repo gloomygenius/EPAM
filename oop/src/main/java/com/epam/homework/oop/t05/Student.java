@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 
 public class Student {
-    private ArrayList<enumCourses> ListOfCourses = new ArrayList<>();
+    private ArrayList<Course> ListOfCourses = new ArrayList<>();
 
-    public void addCourse(enumCourses course) {
-        ListOfCourses.add(course);
+    public void addCourse(EnumCourses enumCourse) {
+        ListOfCourses.add(new Course(enumCourse));
     }
 
-    public boolean isStudy (enumCourses course){
-        return ListOfCourses.contains(course);
+    public boolean isStudy (EnumCourses enumCourse){
+        return ListOfCourses.contains(enumCourse);
     }
 }

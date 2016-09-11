@@ -1,20 +1,20 @@
 package com.epam.homework.oop.t05;
 
 public class Course {
-    private enumCourses course;
+    private EnumCourses course;
     private int intMark = -1;
     private double doubleMark = -1;
 
-    public Course(enumCourses course) {
+    public Course(EnumCourses course) {
         this.course = course;
     }
 
-    public Course(enumCourses course, int mark) {
+    public Course(EnumCourses course, int mark) {
         this(course);
         intMark = mark;
     }
 
-    public Course(enumCourses course, double mark) {
+    public Course(EnumCourses course, double mark) {
         this(course);
         doubleMark = mark;
     }

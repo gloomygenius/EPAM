@@ -9,8 +9,7 @@ public class StudentTest {
 
     @Test
     public void testCourses(){
-        student.addCourse(enumCourses.BIOLOGY);
-        assertTrue(student.isStudy(enumCourses.BIOLOGY));
+        student.addCourse(EnumCourses.BIOLOGY);
+        assertTrue(student.isStudy(EnumCourses.BIOLOGY));
     }
-
 }
