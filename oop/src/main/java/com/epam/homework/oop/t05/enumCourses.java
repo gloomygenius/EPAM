@@ -6,7 +6,7 @@ public enum EnumCourses {
     PHYLOSOPHY("double"),
     PROGRAMMING("int");
 
-    public String typeOfMark;
+    final public String typeOfMark;
 
     private EnumCourses(String typeOfMark) {
         this.typeOfMark = typeOfMark;
