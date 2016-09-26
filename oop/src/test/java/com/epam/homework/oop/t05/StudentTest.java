@@ -18,9 +18,8 @@ public class StudentTest {
     public void testStudentMark(){
         assertThat(student.showCourses(),is(
                         "PHYSICS mark=3.5\n"+
-                        "BIOLOGY mark=4\n"+
+                        "BIOLOGY mark=5\n"+
                         "PHYLOSOPHY mark=5.5\n"+
-                        "PROGRAMMING mark=2\n"));
-
+                        "PROGRAMMING mark=3\n"));
     }
 }

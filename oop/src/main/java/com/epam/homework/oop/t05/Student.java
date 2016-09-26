@@ -14,7 +14,7 @@ public class Student {
 
     public void addCourse(EnumCourses enumCourse, double mark) {
         if (enumCourse.typeOfMark == "double") MapOfCourses.put(enumCourse, mark);
-        if (enumCourse.typeOfMark == "int") MapOfCourses.put(enumCourse, (int) mark);
+        if (enumCourse.typeOfMark == "int") MapOfCourses.put(enumCourse, Math.round(mark));
     }
 
     public boolean isStudy(EnumCourses enumCourse) {

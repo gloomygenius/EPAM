@@ -1,25 +1,1 @@
-package com.epam.homework.strings.t01;
-
-import java.io.BufferedWriter;
-import java.time.*;
-import java.time.format.DateTimeFormatter;
-
-public class CrazyLogger {
-    private StringBuilder crazyLogger = new StringBuilder();
-
-    public void addLog(String massage) {
-        LocalDateTime time = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-        crazyLogger.append(time.format(formatter)).append(" - ").append(massage).append("\n");
-    }
-
-    public void streamOutCrazyLogger(BufferedWriter stream) {
-        try {
-
-            stream.write(crazyLogger.toString());
-            System.out.println(crazyLogger.toString());
-            stream.close();
-        }
-        catch (Exception e) {}
-    }
-}
+package com.epam.homework.strings.t01;import java.io.BufferedWriter;import java.io.IOException;import java.io.OutputStream;import java.io.OutputStreamWriter;import java.time.*;import java.time.format.DateTimeFormatter;import java.util.ArrayList;import java.util.regex.Matcher;import java.util.regex.Pattern;public class CrazyLogger {    private ArrayList<String> crazyLogger = new ArrayList<>();    public void addLog(String massage) {        LocalDateTime time = LocalDateTime.now();        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");        crazyLogger.add(time.format(formatter) + " - " + massage + "\r\n");    }    public void findLog(Pattern pattern, OutputStream stream) {        Matcher m;        for (String str : crazyLogger) {            m = pattern.matcher(str);            if (m.find()) {                streamOut(stream, str);                return;            }        }        streamOut(stream, "Log not found");    }    private void streamOut(OutputStream stream, String log) {        try {            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(stream));            writer.write(log);            writer.flush();        } catch (IOException e) {            e.printStackTrace();        }    }}
