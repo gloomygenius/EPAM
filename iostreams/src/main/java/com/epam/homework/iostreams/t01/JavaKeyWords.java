@@ -1,12 +1,10 @@
 package com.epam.homework.iostreams.t01;
 
-import com.sun.istack.internal.NotNull;
-
 import java.io.*;
 
 public class JavaKeyWords {
-    File file;
-    String javaCode;
+    protected File file;
+    private String javaCode;
 
     public void setFile(File file) {
         this.file = file;

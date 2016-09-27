@@ -1,15 +1,12 @@
-package com.epam.homework.iostreams.t01;
+package com.epam.homework.iostreams.t02;
 
-import ch.qos.logback.core.util.SystemInfo;
+import com.epam.homework.iostreams.t01.KeyWordFinder;
 import org.junit.Test;
-
 import java.io.File;
 
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 
-public class JavaKeyWordsTest {
-    JavaKeyWords javaKeyWords = new JavaKeyWords();
+public class KeyWordFinderTest {
+    KeyWordFinder javaKeyWords = new KeyWordFinder();
 
     @Test
     public void setFileTest() {
