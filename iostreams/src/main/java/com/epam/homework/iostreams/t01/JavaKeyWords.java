@@ -11,11 +11,13 @@ public class JavaKeyWords {
     }
 
     public String readFile() {
-        StringBuilder builder = new StringBuilder(400);
-        try (FileInputStream stream = new FileInputStream(file)) {
-            int i = -1;
-            while ((i = stream.read()) != -1) {
-                builder.append((char) i);
+        StringBuilder builder = new StringBuilder((int) file.length());
+        try (BufferedReader reader=new BufferedReader(
+                new InputStreamReader(
+                        new FileInputStream(file),"UTF8"))) {
+            String nextString;
+            while ((nextString=reader.readLine()) != null) {
+                builder.append(nextString+"\r\n");
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,8 +1,10 @@
-package com.epam.homework.iostreams.t01;
+package com.epam.homework.iostreams.t02;
+
+import com.epam.homework.iostreams.t01.*;
 
 import java.io.*;
 
-public class KeyWordFinder extends JavaKeyWords{
+public class KeyWordFinder extends JavaKeyWords {
 
     @Override
     public String readFile() {

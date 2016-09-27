@@ -1,6 +1,5 @@
 package com.epam.homework.iostreams.t02;
 
-import com.epam.homework.iostreams.t01.KeyWordFinder;
 import org.junit.Test;
 import java.io.File;
 
