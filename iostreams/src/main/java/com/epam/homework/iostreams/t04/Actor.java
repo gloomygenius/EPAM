@@ -17,4 +17,23 @@ public class Actor implements Serializable{
     public String toString(){
         return name;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Actor actor = (Actor) o;
+
+        if (age != actor.age) return false;
+        return name.equals(actor.name);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + age;
+        return result;
+    }
 }

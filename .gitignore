@@ -19,5 +19,5 @@ gradlew*
 *.jar
 *.war
 *.ear
-/classWork/
+/classwork/
 /experiments/

@@ -3,5 +3,6 @@ rootProject.name = 'EPAM'
 include 'intro',
         'oop',
         'strings',
-        'iostreams'
-
+        'iostreams',
+        'exeptions',
+        'collections'

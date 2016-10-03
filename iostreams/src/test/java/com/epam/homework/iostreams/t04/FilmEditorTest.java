@@ -2,8 +2,11 @@ package com.epam.homework.iostreams.t04;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 public class FilmEditorTest {
     private FilmEditor filmEditor = new FilmEditor();
@@ -12,7 +15,7 @@ public class FilmEditorTest {
     private Actor diCaprio = new Actor("Leonardo Wilhelm DiCaprio");
     private Actor gordonLevitt = new Actor("Joseph Gordon-Levitt");
     private Actor tomHardy = new Actor("Tom Hardy");
-    private Object serObject;
+    private ArrayList<Film> serObject;
 
     @Test
     public void addFilmTest() {
@@ -31,7 +34,14 @@ public class FilmEditorTest {
 
     @Test
     public void deserializeTest() {
+        filmEditor.addFilm(inception);
+        serObject = filmEditor.getFilms();
+        filmEditor.serialize("src\\test\\resources\\films.ser");
         filmEditor.deserialize("src\\test\\resources\\films.ser");
+        System.out.println(serObject.toString());
+        System.out.println(filmEditor.getFilms().toString());
+        System.out.println(serObject.equals(filmEditor.getFilms()));
+        assertTrue(serObject.equals(filmEditor.getFilms()));
     }
 
     @Test
