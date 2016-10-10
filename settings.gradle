@@ -5,4 +5,8 @@ include 'intro',
         'strings',
         'iostreams',
         'exeptions',
-        'collections'
+        'collections',
+        'multithreading',
+        'servlets',
+        'xml'
+
