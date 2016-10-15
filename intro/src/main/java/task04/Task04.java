@@ -6,7 +6,7 @@ public class Task04 {
         System.out.println(findMax(a));
     }
 
-    static double findMax(double[] a) {
+    private static double findMax(double[] a) {
         double maxValue = a[0] + a[a.length - 1];
         double sum;
         for (int i = 1; i < (a.length - i - 1); i++) {

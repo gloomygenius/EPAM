@@ -88,7 +88,6 @@ public class Notepad {
         }
     }
     private boolean isCorrectIndex(int index){
-        if ((index<0)||(index >= notepadSize)) return false;
-        else return true;
+        return !((index < 0) || (index >= notepadSize));
     }
 }
