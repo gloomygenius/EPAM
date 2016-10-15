@@ -6,6 +6,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Builers {
-    public String nameMainEngineer();
-    public String nameProjectManager();
+    String nameMainEngineer();
+    String nameProjectManager();
 }

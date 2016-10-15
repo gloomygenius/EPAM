@@ -9,7 +9,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class CompareTest {
-    Stationery[] stationaries = new Stationery[5];
+    private Stationery[] stationaries = new Stationery[5];
     {
         stationaries[0] = new OfficeTool("Parker", 135.0);
         stationaries[1] = new Writing("Bic", 45.0);

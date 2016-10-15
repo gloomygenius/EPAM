@@ -10,10 +10,11 @@ import static org.junit.Assert.*;
         nameProjectManager = "Peter the Great")
 public class AtomicSubmarineTest {
 
-    AtomicSubmarine atomicSubmarine = new AtomicSubmarine();
+    private AtomicSubmarine atomicSubmarine = new AtomicSubmarine();
 
     @Test
     public void startFloatTest(){
-        assertThat(atomicSubmarine.startFloat(),is("Атомная лодка плывёт!"));
+        assertThat(atomicSubmarine.startFloat(),
+                is("Атомная лодка плывёт! Двиагетель Bently мощьностью 4000 л.с."));
     }
 }

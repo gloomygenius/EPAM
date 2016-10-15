@@ -7,7 +7,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class StudentTest {
-    Student student=new Student("Вася");
+    private Student student=new Student("Вася");
     {
         student.addCourse(EnumCourses.BIOLOGY, 4.5);
         student.addCourse(EnumCourses.PHYLOSOPHY, 5.5); // Дробная оценка преобразуется в int

@@ -5,9 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class testPen {
-    Pen pen1 = new Pen();
-    Pen pen2 = new Pen();
-    Pen pen3 = new Pen();
+    private Pen pen1 = new Pen();
+    private Pen pen2 = new Pen();
+    private Pen pen3 = new Pen();
     {
         pen1.setPrice(250.0);
         pen2.setPrice(250.0);

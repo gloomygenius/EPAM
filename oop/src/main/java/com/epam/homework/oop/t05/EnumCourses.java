@@ -1,5 +1,6 @@
 package com.epam.homework.oop.t05;
 
+@SuppressWarnings("WeakerAccess")
 public enum EnumCourses {
     PHYSICS("double"),
     BIOLOGY("int"),
@@ -8,8 +9,7 @@ public enum EnumCourses {
 
     final public String typeOfMark;
 
-    private EnumCourses(String typeOfMark) {
+    EnumCourses(String typeOfMark) {
         this.typeOfMark = typeOfMark;
     }
-
 }
