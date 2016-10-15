@@ -1,16 +1,19 @@
 package com.epam.homework.oop.t02;
 
-import com.epam.homework.oop.t03.*;
-import org.junit.Assert;
+import com.epam.homework.oop.t03.Drawing;
+import com.epam.homework.oop.t03.Stationery;
+import com.epam.homework.oop.t03.Writing;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class AccountingStationaryTest {
 
-    AccountingStationary accountingStationary = new AccountingStationary();
-    Stationery stationary1 = new Writing("Bic",45.0);
-    Stationery stationary2 = new Writing("Parker",135.0);
-    Stationery stationary3 = new Drawing("DALER ROWNEY",123.0);
+    private AccountingStationary accountingStationary = new AccountingStationary();
+    private Stationery stationary1 = new Writing("Bic",45.0);
+    private Stationery stationary2 = new Writing("Parker",135.0);
+    private Stationery stationary3 = new Drawing("DALER ROWNEY",123.0);
 
     @Test
     public void addTest() {

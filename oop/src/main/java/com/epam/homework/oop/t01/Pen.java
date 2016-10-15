@@ -6,6 +6,8 @@ package com.epam.homework.oop.t01;
  * @author Василий Бобков
  * @version 1.0
  */
+
+@SuppressWarnings("WeakerAccess")
 public class Pen {
 
     private double price;

@@ -2,20 +2,17 @@ package com.epam.homework.oop.t03;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class StationeryTest {
 
-    public Stationery[] stationaries = new Stationery[3];
+    private Stationery[] stationaries = new Stationery[3];
 
     {
         stationaries[0] = new Writing("Bic", 45.0);
         stationaries[1] = new OfficeTool("Parker", 135.0);
         stationaries[2] = new Drawing("DALER ROWNEY", 123.0);
-
     }
 
     @Test

@@ -21,7 +21,7 @@ public class Html {
     public void readText() {
         Charset cs = Charset.forName("CP1251");
         StringBuilder text = new StringBuilder();
-        try (BufferedReader reader = new BufferedReader(new FileReader( new File(filePath)))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line = null;
             String newline = System.getProperty("line.separator");
             while ((line = reader.readLine()) != null) {
@@ -32,16 +32,16 @@ public class Html {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        this.textHtml=text.toString();
+        this.textHtml = text.toString();
     }
 
     public void setFilePath(String filePath) {
-        this.filePath=filePath;
+        this.filePath = filePath;
     }
 
     public void findLinks() {
         Pattern pattern = Pattern.compile("([.[^\\.]]+([Р|р]ис)\\.)");
-        if (textHtml ==null) {
+        if (textHtml == null) {
             System.out.println(textHtml);
             return;
         }
