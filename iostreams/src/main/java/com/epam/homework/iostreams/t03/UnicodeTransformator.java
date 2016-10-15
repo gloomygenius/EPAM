@@ -4,6 +4,7 @@ import lombok.*;
 
 import java.io.*;
 
+@SuppressWarnings("WeakerAccess")
 @Setter
 @Getter
 public class UnicodeTransformator {
@@ -16,18 +17,19 @@ public class UnicodeTransformator {
 
     }
 
-    @SneakyThrows
     private void writeFile(String text) {
         try (BufferedWriter writer = new BufferedWriter(
                 new OutputStreamWriter(
                         new FileOutputStream(outFile), "UTF16"))) {
             writer.write(text);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-    @SneakyThrows
     private String readFile() {
         StringBuilder builder = new StringBuilder((int) file.length());
+        //noinspection Duplicates
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(
                         new FileInputStream(file), "UTF8"))) {
@@ -35,6 +37,8 @@ public class UnicodeTransformator {
             while ((nextString = reader.readLine()) != null) {
                 builder.append(nextString).append("\r\n");
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return builder.toString();
     }

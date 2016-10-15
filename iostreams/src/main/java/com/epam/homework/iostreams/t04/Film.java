@@ -1,12 +1,15 @@
 package com.epam.homework.iostreams.t04;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.Arrays;
 
 
-public class Film implements Serializable{
+@SuppressWarnings("WeakerAccess")
+@Getter
+public class Film implements Serializable {
     private String title;
     private Actor[] mainActors;
 
@@ -15,14 +18,11 @@ public class Film implements Serializable{
     }
 
     public void setMainActors(Actor... actors) {
-        mainActors=actors;
+        mainActors = actors;
     }
 
-    public Actor[] getMainActors() {
-        return mainActors;
-    }
     @Override
-    public String toString(){
+    public String toString() {
         return title;
     }
 

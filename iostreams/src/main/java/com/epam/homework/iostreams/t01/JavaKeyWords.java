@@ -10,14 +10,15 @@ public class JavaKeyWords {
         this.file = file;
     }
 
+    @SuppressWarnings("Duplicates")
     public String readFile() {
         StringBuilder builder = new StringBuilder((int) file.length());
-        try (BufferedReader reader=new BufferedReader(
+        try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(
-                        new FileInputStream(file),"UTF8"))) {
+                        new FileInputStream(file), "UTF8"))) {
             String nextString;
-            while ((nextString=reader.readLine()) != null) {
-                builder.append(nextString+"\r\n");
+            while ((nextString = reader.readLine()) != null) {
+                builder.append(nextString).append("\r\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -33,9 +34,12 @@ public class JavaKeyWords {
         for (String keyWord :
                 getAllKeyWords()) {
             count += countKeyWord(keyWord);
-            builder.append(keyWord+" \r\n");
+            builder.append(keyWord).append(" \r\n");
         }
-        builder.append("\r\n всего найдено "+count+" ключевых слов");
+        builder
+                .append("\r\n всего найдено ")
+                .append(count)
+                .append(" ключевых слов");
         try (FileOutputStream stream = new FileOutputStream(filePath)) {
             stream.write(builder.toString().getBytes());
         } catch (IOException e) {
@@ -44,12 +48,11 @@ public class JavaKeyWords {
     }
 
     private String[] getAllKeyWords() {
-        String[] keyWords = {"abstract", "continue", "for", "new", "switch", "assert", "default", "goto,package",
+        return new String[]{"abstract", "continue", "for", "new", "switch", "assert", "default", "goto,package",
                 "synchronized", "boolean", "do", "if", "private", "this", "break", "double", "implements", "protected",
                 "throw", "byte", "else", "import", "public", "throws", "case", "enum", "instanceof", "return", "transient",
                 "catch", "extends", "int", "short", "try", "char", "final", "interface", "static", "void", "class", "finally",
                 "long", "strictfp", "volatile", "const", "float", "native", "super", "while", "true", "false", "null"};
-        return keyWords;
     }
 
     private int countKeyWord(String keyWord) {

@@ -4,17 +4,19 @@ import lombok.*;
 
 import java.io.Serializable;
 
+@SuppressWarnings("WeakerAccess")
 @Setter
 @Getter
-public class Actor implements Serializable{
+public class Actor implements Serializable {
     String name;
     int age;
 
-    public Actor(String name){
-        this.name=name;
+    public Actor(String name) {
+        this.name = name;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return name;
     }
 
@@ -25,8 +27,7 @@ public class Actor implements Serializable{
 
         Actor actor = (Actor) o;
 
-        if (age != actor.age) return false;
-        return name.equals(actor.name);
+        return age == actor.age && name.equals(actor.name);
 
     }
 

@@ -32,6 +32,7 @@ public class FilmEditorTest {
         filmEditor.serialize("src\\test\\resources\\films.ser");
     }
 
+    @SuppressWarnings("Duplicates")
     @Test
     public void deserializeTest() {
         filmEditor.addFilm(inception);
