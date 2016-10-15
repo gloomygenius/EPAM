@@ -10,15 +10,11 @@ public class CrazyLoggerTest {
 
     @Test
     public void addLogTest() {
-        logger.addLog("Первая запись в лог");
-        logger.addLog("Вторая запись в лог");
-        logger.addLog("Третья запись в лог");
-
-        try (OutputStream stream = System.out) {
-            logger.findLog(Pattern.compile("Вторая"),stream);
-
-        } catch (Exception e) {
-            System.err.println("Ошибка!");
-        }
+        logger.addLog("Первая запись в лог: ура!");
+        logger.addLog("Вторая запись в лог: всё нормально");
+        logger.addLog("Третья запись в лог: а вот здесь ошибка");
+        logger.saveLog("src/test/resources/log.txt");
+        //ищем нужные записи
+        System.out.println(CrazyLogger.findLog("ошибка", "src/test/resources/log.txt"));
     }
 }

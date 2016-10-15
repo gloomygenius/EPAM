@@ -1,1 +1,1 @@
-apply plugin 'war'
+apply plugin: 'war'

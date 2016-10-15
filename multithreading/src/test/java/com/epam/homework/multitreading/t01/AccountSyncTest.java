@@ -7,10 +7,9 @@ public class AccountSyncTest {
 
     @Test
     public synchronized void loadAccounts() throws Exception {
-        String pathToAccountNum = "src/main/resources/accounts.txt";
-        String pathToTransactionList = "src/main/resources/transactions.txt";
+        String pathToAccountNum = "src/test/resources/accounts.txt";
+        String pathToTransactionList = "src/test/resources/transactions.txt";
         accountSync.doTransaction(pathToAccountNum, pathToTransactionList);
-
+        //результаты в консоли
     }
-
 }

@@ -8,5 +8,6 @@ include 'intro',
         'collections',
         'multithreading',
         'servlets',
-        'xml'
+        'xml',
+        'jdbc'
 
