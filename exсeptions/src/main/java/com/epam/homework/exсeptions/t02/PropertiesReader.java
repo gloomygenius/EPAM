@@ -19,11 +19,11 @@ public class PropertiesReader {
             try {
                 value = properties.getProperty(key);
             } catch (NullPointerException e) {
-                e.printStackTrace(); // ошибка, если нет ключа
+                System.err.println("Нет ключа в properties: "+key);
             }
 
         } catch (IOException e) {
-            e.printStackTrace(); // ошибка, если нет файла
+            System.err.println("Файл "+path+" не найден");
         }
         return value;
     }
