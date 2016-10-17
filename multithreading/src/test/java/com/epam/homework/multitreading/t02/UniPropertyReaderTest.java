@@ -9,6 +9,6 @@ public class UniPropertyReaderTest {
 
     @Test
     public void getPropertyTest(){
-        assertThat(UniPropertyReader.getProperty("src/test/resources/t03.properties","param"),is("example"));
+        assertThat(UniPropertyReader.getProperty("src/test/resources/t02.properties","param"),is("example"));
     }
 }

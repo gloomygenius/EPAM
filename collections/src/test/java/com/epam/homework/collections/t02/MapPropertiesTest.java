@@ -6,7 +6,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class MapPropertiesTest {
-    MapProperties properties = new MapProperties();
+    private MapProperties properties = new MapProperties();
 
     @Test
     public void initProperties() throws Exception {
@@ -17,6 +17,8 @@ public class MapPropertiesTest {
     @Test
     public void getProperty() throws Exception {
         properties.initProperties("src\\test\\resources\\example.properties");
+        assertThat(properties.getProperty("firstKey"), is("30"));
         assertThat(properties.getProperty("secondKey"), is("40"));
+        assertThat(properties.getProperty("thirdKey"), is("50"));
     }
 }

@@ -4,12 +4,12 @@ import java.io.*;
 import java.util.*;
 import java.util.regex.*;
 
+@SuppressWarnings("WeakerAccess")
 public class AccountSync implements Runnable {
-    Map<Integer, Integer> accountsState = new HashMap<>();
-    Queue<Integer[]> transactionsQueue = new ArrayDeque<>();
-    static int transactionCount = 0;
+    private Map<Integer, Integer> accountsState = new HashMap<>();
+    private Queue<Integer[]> transactionsQueue = new ArrayDeque<>();
+    private static int transactionCount = 0;
     private ArrayList<Thread> threadPool = new ArrayList<>();
-    private boolean isBusy = false;
 
     public void doTransaction(String pathToAccountNum, String pathToTransactionList) {
         AccountSync accountSync = new AccountSync();
@@ -20,7 +20,7 @@ public class AccountSync implements Runnable {
 
     }
 
-    void parseAndStartTransaction(String transactionsInfo) {
+    private void parseAndStartTransaction(String transactionsInfo) {
         Pattern accountPattern = Pattern.compile("(\\d+) (\\d+) (\\d+)");
         Matcher matcher = accountPattern.matcher(transactionsInfo);
         while (matcher.find()) {
@@ -43,7 +43,7 @@ public class AccountSync implements Runnable {
         }
     }
 
-    public String loadFinInfo(String path) {
+    private String loadFinInfo(String path) {
         File file = new File(path);
         String textOfFile = "";
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -57,7 +57,7 @@ public class AccountSync implements Runnable {
         return textOfFile;
     }
 
-    void parseAccounts(String textOfFile) {
+    private void parseAccounts(String textOfFile) {
         Pattern accountPattern = Pattern.compile("(\\d+):(\\d+)");
         Matcher matcher = accountPattern.matcher(textOfFile);
         while (matcher.find()) {
@@ -71,13 +71,14 @@ public class AccountSync implements Runnable {
     public void run() {
         transaction();
     }
-    private synchronized void transaction(){
+
+    private synchronized void transaction() {
         Integer[] transInfo = transactionsQueue.remove();
         int transactionNumber = ++transactionCount;
         System.out.println("Начало обработки транзакции №" + transactionNumber + ":");
         System.out.println(transInfo[0] + "-->" + transInfo[1] + " сумма:" + transInfo[2]);
         if ((accountsState.get(transInfo[0]) - transInfo[2]) < 0) {
-            System.err.println("Недостаточно средств на счёте " + transInfo[0]+" для транзакции "+transactionNumber);
+            System.err.println("Недостаточно средств на счёте " + transInfo[0] + " для транзакции " + transactionNumber);
         } else {
             Integer amount = accountsState.get(transInfo[0]) - transInfo[2];
             accountsState.put(transInfo[0], amount);
@@ -87,6 +88,7 @@ public class AccountSync implements Runnable {
             printAccountsState();
         }
     }
+
     private synchronized void printAccountsState() {
         System.out.print("Состояние счёта: ");
         for (Map.Entry<Integer, Integer> entry : accountsState.entrySet()) {

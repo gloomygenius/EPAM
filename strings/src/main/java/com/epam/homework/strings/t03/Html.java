@@ -7,6 +7,8 @@ import java.nio.charset.Charset;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// TODO: 17.10.2016  допилить до ума
+@SuppressWarnings("All")
 public class Html {
     private String filePath;
     private String textHtml;
@@ -40,7 +42,7 @@ public class Html {
     }
 
     public void findLinks() {
-        Pattern pattern = Pattern.compile("([.[^\\.]]+([Р|р]ис)\\.)");
+        Pattern pattern = Pattern.compile("");
         if (textHtml == null) {
             System.out.println(textHtml);
             return;

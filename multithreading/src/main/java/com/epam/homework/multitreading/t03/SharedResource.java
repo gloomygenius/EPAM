@@ -2,11 +2,13 @@ package com.epam.homework.multitreading.t03;
 
 import java.util.ArrayList;
 import java.util.List;
+
+@SuppressWarnings("WeakerAccess")
 public class SharedResource {
     private List<Integer> list;
 
     public SharedResource() {
-        list = new ArrayList<Integer>();
+        list = new ArrayList<>();
     }
 
     public void setElement(Integer element) {

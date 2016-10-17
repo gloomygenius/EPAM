@@ -2,8 +2,10 @@ package com.epam.homework.multitreading.t03;
 
 import java.util.Random;
 
+// TODO: 17.10.2016 переделать
+@SuppressWarnings("WeakerAccess")
 class IntegerSetterGetter extends Thread {
-    private SharedResource resource;
+    private final SharedResource resource;
     private boolean run;
 
     private Random rand = new Random();

@@ -8,9 +8,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-@Getter
+@SuppressWarnings("WeakerAccess")
 public class MapProperties {
-    Map<String, String> map = new HashMap<>();
+    @Getter
+    private Map<String, String> map = new HashMap<>();
 
     public void initProperties(String path) {
 
