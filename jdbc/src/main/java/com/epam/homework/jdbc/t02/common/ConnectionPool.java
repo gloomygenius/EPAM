@@ -84,7 +84,6 @@ public interface ConnectionPool extends Supplier<Connection>, AutoCloseable {
                 connection.reallyClose();
             } catch (SQLException e) {
                 e.printStackTrace();
-//                throw new RuntimeException(e);
             }
         });
     }
